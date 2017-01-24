@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customize-Standard-UI</title>
+    <style>
+        .button {
+            -webkit-appearance: none;
+            cursor: pointer;
+
+            border-radius: 2px;
+            min-height: 40px;
+            min-width: 100px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .button-default {
+            background: #efefef;
+            border: solid 1px #bebebe;
+            color: #333;
+        }
+        .button-default:hover {
+            color: #bebebe;
+        }
+        .button-default[disabled] {
+            color: #bebebe;
+        }
+    </style>
+</head>
+<body>
+<p>先標準化browser UI成Standard UI，在自訂樣式</p>
+<button class="button">Let's Go</button>
+<input type="button" class="button" value="Let's Go">
+<p>擴充button、input算</p>
+<button class="button button-default" onclick="alert('Hey')">Let's Go</button>
+<input type="button" class="button button-default" value="Let's Go">
+<p>繼承disabled功能</p>
+<button class="button" disabled>Let's Go</button>
+<input type="button" class="button" value="Let's Go" disabled>
+<p>繼承功能且自定義disable樣式</p>
+<button class="button button-default" disabled onclick="alert('Hey')">Let's Go</button>
+<input type="button" class="button button-default" value="Let's Go" disabled>
+</body>
+</html>

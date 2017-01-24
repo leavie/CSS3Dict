@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+.main-wrapper {
+    position: relative;
+    height: 800px;
+}
+.feature-article {
+    padding: 40px;
+}
+
+.modal-wrapper {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    background: #333;
+    opacity: .8;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.modal-content {
+    width: 60%;
+    height: 180px;
+    margin: 100px auto;
+    background: #ffffff;
+    border: 2px solid #333;
+    border-radius: 4px;
+    padding: 40px 80px;
+}
+
+.dialogue-title,
+.dialogue-message {
+    text-align: center;
+}
+
+.dialogue-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.dialogue-action {
+    display: flex;
+}
+.dialogue-action-item {
+    flex: 1;
+    width: 50%;
+    padding: 0 5px;
+}
+
+.modal-wrapper.show {
+    display: block;
+}
