@@ -1,5 +1,6 @@
 <template>
-    <button class="button button-layout"  v-bind:class="buttonLook" v-text="defaultText"></button>
+    <button class="button button-layout"  v-bind:class="buttonLook"
+     v-text="defaultText" v-on:click="buttonEmit"></button>
 <!-- <button class="button button-layout"></button> -->
 <!-- <button class="button button-layout button-primary">Default</button>
 <button class="button button-layout button-emergency">Default</button>
@@ -46,6 +47,11 @@ export default {
             var material = [type, gradientName, this.stateDescription]
             var size = [type, this.sizeDescription]
             return [material.filter(e=>e).join('-'), size.filter(e=>e).join('-') ]
+        },
+    },
+	methods: {
+        buttonEmit() {
+            this.$emit('custom-click')
         }
     }
 }
