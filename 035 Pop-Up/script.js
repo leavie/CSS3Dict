@@ -1,5 +1,5 @@
 /**
- * Created by leavie on 2016/11/23.
+ * dependency: Jquery
  */
 var modalWrapper = $('.modal-wrapper');
 $('.modal-action .button').on('click',function(){
@@ -8,5 +8,3 @@ $('.modal-action .button').on('click',function(){
 $('.dialogue-action .button').on('click',function(){
     modalWrapper.removeClass('show');
 });
-test = 8;
-talkWithOtherFiles(modalWrapper);
