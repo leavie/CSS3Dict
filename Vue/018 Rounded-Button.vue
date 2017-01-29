@@ -23,10 +23,11 @@ export default {
     name: 'rounded-button',
     props: ['options'],
     data() {
+        const {state = 0, size = 0, gradient = false} = this.options
         return {
-            state: this.options && this.options.state,
-            size: this.options && this.options.size,
-            gradient: this.options && this.options.gradient,
+            state: state,
+            size: size,
+            gradient: gradient
         }
     },
     computed:{
@@ -37,10 +38,10 @@ export default {
             return `${type}-${this.stateDescription}`
         },
         stateDescription() {
-            return  states[this.state || 0]
+            return  states[this.state]
         },
         sizeDescription() {
-            return sizes[this.size || 0]
+            return sizes[this.size]
         },
         buttonClasses() {
             var gradientName = this.gradient ? 'gradient' : ''
