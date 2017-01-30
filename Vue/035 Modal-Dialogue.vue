@@ -2,7 +2,8 @@
   <div class="main-wrapper">
     <article class="feature-article">
       <h1 class="modal-action">
-        <rounded-button v-text="'對話框'" v-on:custom-click="toogleModal" v-bind:options="{state:1, gradient: true}"></rounded-button> <!-- need emit event -->
+        <rounded-button  v-on:confirm-click="toogleModal" eventname="confirm-click"
+          v-bind:options="{state:1, gradient: true}" v-text="'對話框'"></rounded-button> <!-- need emit event -->
         <button v-on:click="toogleModal">Temp button</button>
       </h1>
       <ul>對話框的結構
@@ -21,11 +22,12 @@
 
         <div class="dialogue-action">
           <p class="dialogue-action-item">
-            <rounded-button key="cancel" v-on:custom-click="toogleModal" v-bind:options="{state:0, size:2}" v-text="'取消'">
-          </rounded-button>
+            <rounded-button key="cancel" v-on:confirm-click="toogleModal" eventname="confirm-click"
+              v-bind:options="{state:0, size:2}" v-text="'取消'"></rounded-button>
         </p>
         <p class="dialogue-action-item">
-          <rounded-button key="delete" v-on:custom-click="toogleModal" v-bind:options="{state:2, size:2}" v-text="'刪除'">刪除</rounded-button>
+          <rounded-button key="delete" v-on:confirm-click="toogleModal" eventname="confirm-click"
+            v-bind:options="{state:2, size:2}" v-text="'刪除'">刪除</rounded-button>
         </p>
       </div>
 

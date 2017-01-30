@@ -21,7 +21,7 @@
     const sizes = ['inline', 'squre-middle', 'max']
 export default {
     name: 'rounded-button',
-    props: ['options'],
+    props: ['options', 'eventname'],
     data() {
         const {state = 0, size = 0, gradient = false} = this.options
         return {
@@ -52,7 +52,8 @@ export default {
     },
 	methods: {
         buttonEmit() {
-            this.$emit('custom-click')
+            console.log(this['eventname'])
+            this.$emit(this['eventname'])
         }
     }
 }
