@@ -1,126 +1,98 @@
 <template>
-  <div class="main-wrapper">
-    <article class="feature-article">
-      <h1 class="modal-action">
-        <rounded-button  v-on:confirm-click="toogleModal" eventname="confirm-click"
-          v-bind:options="{state:1, gradient: true}" v-text="'對話框'"></rounded-button> <!-- need emit event -->
-        <button v-on:click="toogleModal">Temp button</button>
-      </h1>
-      <ul>對話框的結構
-        <li>.main-wrapper (relative)</li>
-        <li>.normal-content</li>
-        <li>.modal-wrapper (abs)</li>
-        <li>.modal-mask (abs)</li>
-        <li>.modal-content</li>
-      </ul>
-    </article>
-    <div class="modal-wrapper" v-show="isModal">
-      <div class="modal-mask"></div>
-      <div class="modal-content">
-        <p class="dialogue-title">真的要刪除嗎？</p>
-        <p class="dialogue-message">刪除後無法回復！</p>
-
-        <div class="dialogue-action">
-          <p class="dialogue-action-item">
-            <rounded-button key="cancel" v-on:confirm-click="toogleModal" eventname="confirm-click"
-              v-bind:options="{state:0, size:2}" v-text="'取消'"></rounded-button>
-        </p>
-        <p class="dialogue-action-item">
-          <rounded-button key="delete" v-on:confirm-click="toogleModal" eventname="confirm-click"
-            v-bind:options="{state:2, size:2}" v-text="'刪除'">刪除</rounded-button>
-        </p>
+  <div class="main-wrapper" v-show="isShow">
+    <div class="dialogue-cover"></div>
+    <div class="dialogue-frame">
+      <div class="dialogue">
+        <p class="title" v-text="title || 'Title'"></p>
+        <p class="message" v-text="message || 'Message'"></p>
+        <div class="action">
+          <p class="item">
+            <rounded-button key="yes" v-text="yes || 'Yes'"
+            v-on:click.native="toogleModal"
+            v-bind:options="{state:2, size:2}" ></rounded-button>
+          </p>
+          <p class="item">
+            <rounded-button key="no"  v-text="no || 'No'"
+            v-on:click.native="toogleModal"
+            v-bind:options="{state:0, size:2}"></rounded-button>
+          </p>
+        </div>
       </div>
-
     </div>
   </div>
 </div>
 </template>
-<!--
-<style>
-    .button-misc {
-        font-weight: bold;
-    }
-</style>
--->
+
 <script>
 import RoundedButton from './018 Rounded-Button'
+// import {eventHub as hub} from './eventHub.js'
 export default {
   name: 'modal-dialogue',
+  props: ['title', 'message', 'yes', 'no'],
   components: { RoundedButton },
   data() {
     return {
-      isModal: false
+      isShow: true,
     }
   },
   methods: {
     toogleModal() {
-      this.isModal = !this.isModal
-      console.log('Modal is open')
+      this.isShow = !this.isShow
+    },
+    activateAll() {
+      // hub.$emit('allButton')
     }
   }
 }
 </script>
 
 <style scoped>
-body {
-  margin: 0;
-}
 .main-wrapper {
-  position: relative;
-  height: 800px;
+  margin: 0;
+  padding: 0;
 }
-.feature-article {
-  padding: 40px;
-}
-
-.modal-wrapper {
-  /*display: none;*/
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-.modal-mask {
+.dialogue-cover {
   width: 100%;
   height: 100%;
   background: #333;
   opacity: .8;
   position: absolute;
   top: 0;
+  left: 0;
   z-index: -1;
 }
-
-.modal-content {
+.dialogue-frame {
+  box-sizing: border-box;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   width: 60%;
+  z-index: 1;
+}
+.dialogue {
+  width: 100%;
   height: 180px;
-  margin: 100px auto;
-  background: #ffffff;
+  margin: 0 5px;
+  position: relative;
+  background: #fff;
   border: 2px solid #333;
   border-radius: 4px;
   padding: 40px 80px;
-}
-
-.dialogue-title,
-.dialogue-message {
   text-align: center;
 }
-
-.dialogue-title {
+.dialogue .title {
   font-weight: bold;
   font-size: 1.2em;
 }
-
-.dialogue-action {
+.dialogue .action {
   display: flex;
 }
-.dialogue-action-item {
+.action .item {
   flex: 1;
   width: 50%;
   padding: 0 5px;
-}
-
-.modal-wrapper.show {
-  display: block;
 }
 </style>

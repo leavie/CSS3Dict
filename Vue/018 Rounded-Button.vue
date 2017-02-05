@@ -1,36 +1,31 @@
 <template>
     <button class="button button-layout"  v-bind:class="buttonLook"
-     v-text="defaultText" v-on:click="buttonEmit"></button>
-<!-- <button class="button button-layout"></button> -->
-<!-- <button class="button button-layout button-primary">Default</button>
-<button class="button button-layout button-emergency">Default</button>
-<button class="button button-layout button-gradient button-gradient-light">Gradient</button>
-<button class="button button-layout button-gradient button-gradient-dark button-gradient-primary">Gradient</button>
-<button class="button button-layout button-gradient button-gradient-dark button-gradient-emergency">Gradient</button>
-<button class="button button-layout button-default button-max">Default</button>
-<button class="button button-layout button-primary button-max">Default</button>
-<button class="button button-layout button-emergency button-max">Default</button>
-<button class="button button-layout button-gradient button-gradient-light button-square-middle">Gradient</button>
-<button class="button button-layout button-gradient button-gradient-primary button-gradient-dark button-square-middle">Gradient</button>
-<button class="button button-layout button-gradient button-gradient-emergency button-gradient-dark button-square-middle">Gradient</button> -->
+    v-text="defaultText" v-on:click="buttonEmit"></button>
 </template>
 
 <script>
-    const type = 'button'
-    const states = ['default','primary','emergency']
-    const sizes = ['inline', 'squre-middle', 'max']
+import {eventHub as hub} from './eventHub.js'
+
+const type = 'button'
+const states = ['default','primary','emergency']
+const sizes = ['inline', 'squre-middle', 'max']
+
 export default {
     name: 'rounded-button',
     props: ['options', 'eventname'],
+    created() {
+        hub.$on('allButton',  this.alert)
+        console.dir(hub.$on)
+    },
     data() {
-        const {state = 0, size = 0, gradient = false} = this.options
+        var {state = 0, size = 0, gradient = false} = this.options || {}
         return {
             state: state,
             size: size,
             gradient: gradient
         }
     },
-    computed:{
+    computed: {
         buttonLook() {
             return this.buttonClasses.concat({'button-gradient': this.gradient})
         },
@@ -50,10 +45,15 @@ export default {
             return [material.filter(e=>e).join('-'), size.filter(e=>e).join('-') ]
         },
     },
-	methods: {
+    methods: {
         buttonEmit() {
-            console.log(this['eventname'])
-            this.$emit(this['eventname'])
+            if(this['evnetname']) {
+                console.log(this['eventname'])
+                this.$emit(this['eventname'])
+            }
+        },
+        alert() {
+            alert `this.options`
         }
     }
 }
@@ -71,10 +71,10 @@ export default {
  - states: default, primary, emergency;
  - size: none max, squre-middle;
  - rounded: true, false;
-*/
+ */
 
-/*normalize*/
-.button {
+ /*normalize*/
+ .button {
     box-sizing: border-box;
     -webkit-appearance: none;
     border: none;
@@ -104,7 +104,7 @@ export default {
 .button-gradient {
     border: solid rgba(0,0,0,.2) 1px;
     box-shadow: 0 1px 1px #fff,
-        inset 0 1px 1px rgba(255,255,255,.4);
+    inset 0 1px 1px rgba(255,255,255,.4);
     color: #fff;
 }
 .button-gradient-dark {
