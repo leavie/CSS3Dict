@@ -29,11 +29,11 @@
 
         <div class="dialogue-action">
           <p class="dialogue-action-item">
-            <rounded-button key="cancel" v-on:click="toogleModal" v-bind:options="[]" v-text="'取消'">
+            <rounded-button key="cancel" v-on:click="toogleModal" v-bind:look="['default']" v-text="'取消'">
             </rounded-button>
         </p>
         <p class="dialogue-action-item">
-          <rounded-button key="delete" v-on:click="toogleModal" v-bind:options="[]" v-text="'刪除'">
+          <rounded-button key="delete" v-on:click="toogleModal" v-bind:look="['default', 'gradient-light', 'gradient']" v-text="'刪除'">
           </rounded-button>
         </p>
       </div>
@@ -74,7 +74,7 @@ body {
 }
 .main-wrapper {
   position: relative;
-  height: 800px;
+  height: 100%;
 }
 .feature-article {
   padding: 40px;

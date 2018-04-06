@@ -67,7 +67,7 @@
     /*disabled item*/
     /*input*/
     input:disabled {
-        cursor: none
+        cursor: not-allowed
     }
     /*adjacent text*/
     input:disabled + .text {
