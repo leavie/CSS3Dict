@@ -2,7 +2,7 @@
   <div class="main-wrapper">
     <article class="feature-article">
       <h1 class="modal-action">
-        <rounded-button v-text="'對話框'" v-on:custom-click="toogleModal" v-bind:options="{state:1, gradient: true}"></rounded-button> <!-- need emit event -->
+        <rounded-button v-text="'對話框'" v-on:click="toogleModal" v-bind:look="['emergency', 'gradient', '']"></rounded-button>
         <button v-on:click="toogleModal">standard button</button>
       </h1>
       <ul>對話框的結構
@@ -29,11 +29,11 @@
 
         <div class="dialogue-action">
           <p class="dialogue-action-item">
-            <rounded-button key="cancel" v-on:custom-click="toogleModal" v-bind:options="{state:0, size:2, gradient: true}" v-text="'取消'">
+            <rounded-button key="cancel" v-on:click="toogleModal" v-bind:options="[]" v-text="'取消'">
             </rounded-button>
         </p>
         <p class="dialogue-action-item">
-          <rounded-button key="delete" v-on:custom-click="toogleModal" v-bind:options="{state:2, size:2, gradient: true}" v-text="'刪除'">
+          <rounded-button key="delete" v-on:click="toogleModal" v-bind:options="[]" v-text="'刪除'">
           </rounded-button>
         </p>
       </div>
@@ -50,7 +50,7 @@
 </style>
 -->
 <script>
-import RoundedButton from './Rounded-Button.vue'
+import RoundedButton from '../button/Rounded-Button.vue'
 export default {
   name: 'modal-dialogue',
   components: { RoundedButton },
