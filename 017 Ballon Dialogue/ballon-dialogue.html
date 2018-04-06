@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>對話泡泡效果</title>
+	<style type="text/css">
+
+.balloon-default {
+    height: 48px;
+    width: 500px;
+    padding: 0px 20px;
+    border-radius: 8px;
+    position: relative;
+    background: #efefef
+}
+.balloon-default::after {
+		display: block;
+		content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    margin-left: -5px;
+    border-top: solid 10px #efefef;
+    border-left: solid 8px rgba(0, 128, 0, 0);
+    border-right: solid 8px rgba(0, 128, 0, 0);
+}
+ .balloon-multi {
+ 		top: 50px;
+ 		height: 48px;
+    width: 500px;
+    padding: 0px 20px;
+    border: solid 1px aqua;
+    border-radius: 8px;
+    position: relative;
+ }
+ .balloon-multi::before,
+ .balloon-multi::after {
+ 		display: block;
+ 		content: "";
+ 		border-top: solid 10px aqua;
+ 		border-right: solid 8px transparent;
+ 		border-left: solid 8px transparent;
+ 		height: 0px;
+ 		width: 0px;
+ 		margin-left: -5px;
+ 		position: absolute;
+ 		bottom: -10px;
+ 		left: 50%;
+ }
+  .balloon-multi:after {
+ 		border-top-color: white;
+ 		bottom: -9px;
+ 	}
+</style>
+</head>
+<body>
+	<div class="balloon-default"></div>
+	<div class="balloon-multi"></div>
+</body>
+</html>
