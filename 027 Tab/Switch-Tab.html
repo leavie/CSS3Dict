@@ -1,58 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Switch Tab</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="main-wrapper">
-    <input type="radio" name="tab" value="0" title="推薦順序" checked>
-    <input type="radio" name="tab" value="1" title="最佳">
-    <input type="radio" name="tab" value="2" title="新項目">
-    <div id="main1" class="main-content">
-        <ul class="list">
-            <li class="item"><a href="#">
-                    <img src="" class="fakeimg">
-                    <p class="item-title">FaceBug</p>
-                    <p class="item-description">Social but net catching </p>
-            </a></li>
-            <li class="item"><a href="#">
-                    <img src="http://fakeimg.pl/32x32">
-                    <p class="item-title">Pine</p>
-                    <p class="item-description">I have an apple, I have an pine.... </p>
-            </a></li>
-        </ul>
-    </div>
 
-    <div id="main2" class="main-content">
-        <ul class="list">
-            <li class="item"><a href="#">
-                <img src="" class="fakeimg">
-                <p class="item-title">YouCube</p>
-                <p class="item-description">You got the cube of cum</p>
-            </a></li>
-            <li class="item"><a href="#">
-                <img src="" width="64" height="64">
-                <p class="item-title">FaceBug</p>
-                <p class="item-description">Social but net catching </p>
-            </a></li>
-        </ul>
-    </div>
-    <div id="main3" class="main-content">
-        <ul class="list">
-            <li class="item"><a href="#">
-                <img src="" class="fakeimg">
-                <p class="item-title">FaceBug</p>
-                <p class="item-description">Social but net catching </p>
-            </a></li>
-            <li class="item"><a href="#">
-                <img src="" class="fakeimg">
-                <p class="item-title">YouCube</p>
-                <p class="item-description">You got the cube of cum</p>
-        </a></li>
-        </ul>
-    </div>
-</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Switch Tab</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="main-wrapper">
+            <input type="radio" name="tab" value="0" title="推薦順序" checked>
+            <input type="radio" name="tab" value="1" title="最佳">
+            <input type="radio" name="tab" value="2" title="新項目">
+            <div id="main1" class="main-content">
+                <ul class="list">
+                    <li class="item"><a href="#" class="item__link">
+                            <div class="item__side item__side--small">
+                                <img class="fakeimg">
+                            </div>
+                            <div class="text">
+                                <p class="text__title">FaceBug</p>
+                                <p class="text__description">Social but net
+                                    catching
+                                </p>
+                            </div>
+                        </a></li>
+                    <li class="item"><a href="#" class="item__link">
+                            <div class="item__side item__side--small">
+                                <div class="img-container-square">
+                                    <img src="http://fakeimg.pl/64x64"
+                                        class="img-container-square__img">
+                                </div>
+                            </div>
+                            <div class="text">
+                                <p class="text__title">Pine</p>
+                                <p class="text__description">I have an apple, I
+                                    have
+                                    an pine.... </p>
+                            </div>
+                        </a></li>
+                </ul>
+            </div>
+
+            <div id="main2" class="main-content">
+                <ul class="list">
+                    <li class="item">
+                        <a href="#" class="item__link">
+                            <div class="item__side item__side--small">
+                                <img width="64" height="64" class="fakeimg">
+                            </div>
+                            <div class="text">
+                                <p class="text__title">YouCube</p>
+                                <p class="text__description">You got the cube of
+                                    cum
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="item__link">
+                            <div class="item__side item__side--small">
+                                <img width="64" height="64" class="fakeimg">
+                            </div>
+                            <div class="text">
+                                <p class="text__title">FaceBug</p>
+                                <p class="text__description">Social but net
+                                    catching
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="main3" class="main-content">
+                <ul class="list">
+                    <li class="item">
+                        <a href="#" class="item__link">
+                            <div class="item__side item__side--small">
+                                <img width="64" height="64" class="fakeimg">
+                            </div>
+                            <div class="text">
+                                <p class="text__title">FaceBug</p>
+                                <p class="text__description">Social but net
+                                    catching
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#" class="item__link">
+                            <div class="item__side item__side--small">
+                                <img width="64" height="64" class="fakeimg">
+                            </div>
+                            <div class="text">
+                                <p class="text__title">YouCube</p>
+                                <p class="text__description">You got the cube of
+                                    cum
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+
 </html>
