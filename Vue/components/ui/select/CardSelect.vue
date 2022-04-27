@@ -18,28 +18,28 @@
 
 <style scoped>
     #main {
-        background: #fff;
         padding: 10px 0;
+        background: #ffffff;
     }
 
     fieldset {
-        background: #fff;
-        border: solid 1px #ddd;
+        position: relative;
+        padding: 40px 0 0;
+        margin: 20px 10px;
+        font-family: sans-serif;
+        color: #333333;
+        background: #ffffff;
+        border: solid 1px #dddddd;
         border-radius: 4px;
         box-shadow: 0 1px 8px rgba(0,0,0,.2);
-        color: #333;
-        font-family: sans-serif;
-        padding: 40px 0 0;
-        position: relative;
-        margin: 20px 10px;
     }
 
     legend {
-        font-weight: bold;
-        height: 40px;
-        left: 5px;
-        line-height: 40px;
         position: absolute;
         top: 0;
+        left: 5px;
+        height: 40px;
+        font-weight: bold;
+        line-height: 40px;
     }
 </style>

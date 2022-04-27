@@ -37,10 +37,10 @@ export default {
     }
 
     .item {
-      padding: 15px 10px;
-      border-bottom: 1px solid #eeeeee;
-      list-style: none;
       overflow: auto;
+      padding: 15px 10px;
+      list-style: none;
+      border-bottom: 1px solid #eeeeee;
     }
     img {
       float:left;
@@ -48,25 +48,25 @@ export default {
     }
     .fakeimg{
       display: block;
+      margin-right: 10px;
       width: 64px;
       height: 64px;
-      margin-right: 10px;
-      background: #eee
+      background: #eeeeee
 
     }
     .item-title,
     .item-des{
-      margin: 0;
       padding: 0;
-      color: #ccc;
-      font-family: sans-serif;
+      margin: 0;
       font-size: 0.7em;
+      font-family: sans-serif;
+      color: #cccccc;
       line-height: 1.5em;
     }
 
     .item-title {
-      font-weight: bold;
-      color: #333;
       font-size: 0.8em;
+      font-weight: bold;
+      color: #333333;
     }
 </style>

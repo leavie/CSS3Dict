@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>How to change browser UI</title>
-    <style>
-        .standard input {
-            -webkit-appearance: none;
-        }
 
-        button {
-            -webkit-appearance: none;
-        }
-    </style>
-</head>
-各個瀏覽器對一些有功能元素UI設置了特殊的樣式，將他們的appearance屬性設為none來標準化UI
+    <head>
+        <meta charset="UTF-8">
+        <title>How to change browser UI</title>
+        <style>
+            /* stylelint-disable selector-max-type */
+            .standard input {
+                -webkit-appearance: none;
+            }
 
-<button>Button</button>
-<br>
-標準化前
-<form class="browser">
-    <input type="text">
-    <input type="range">
-    <input type="radio">
-    <input type="checkbox">
-    <input type="button">
-</form>
-標準化後
-<br>
-<form class="standard">
-    <input type="text">
-    <input type="range">
-    <input type="radio">
-    <input type="checkbox">
-    <input type="button">
-</form>
+            button {
+                -webkit-appearance: none;
+            }
 
-</body>
+        </style>
+    </head>
+    各個瀏覽器對一些有功能元素UI設置了特殊的樣式，將他們的appearance屬性設為none來標準化UI
+
+    <button>Button</button>
+    <br>
+    標準化前
+    <form class="browser">
+        <input type="text">
+        <input type="range">
+        <input type="radio">
+        <input type="checkbox">
+        <input type="button">
+    </form>
+    標準化後
+    <br>
+    <form class="standard">
+        <input type="text">
+        <input type="range">
+        <input type="radio">
+        <input type="checkbox">
+        <input type="button">
+    </form>
+
+    </body>
+
 </html>

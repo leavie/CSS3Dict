@@ -9,39 +9,39 @@
 }
 /*Basic Layout Design*/
 .button-layout {
-    border-radius: 4px;
     padding: 6px 10px;
     text-align: center;
+    border-radius: 4px;
 }
 /*State*/
 .button-default {
+    color: #333333;
     background: #efefef;
-    color: #333;
 }
 .button-primary {
+    color: #ffffff;
     background: #3bab09;
-    color: #fff;
 }
 .button-emergency{
+    color: #ffffff;
     background: #eb3b5a;
-    color: #fff;
 }
 
 /*Material*/
 .button-gradient {
+    color: #ffffff;
     border: solid rgba(0,0,0,.2) 1px;
-    box-shadow: 0 1px 1px #fff,
+    box-shadow: 0 1px 1px #ffffff,
         inset 0 1px 1px rgba(255,255,255,.4);
-    color: #fff;
 }
 .button-gradient-dark {
+    color: #ffffff;
     text-shadow: 0 -1px 1px rgba(0,0,0,.5);
-    color: #fff;
 }
 .button-gradient-light {
-    background: linear-gradient(#ffffff,#e3e1e2);
 
-    color: #333;
+    color: #333333;
+    background: linear-gradient(#ffffff,#e3e1e2);
 }
 .button-gradient-primary {
     background: linear-gradient(#55c40d, #3bab09);

@@ -22,8 +22,8 @@
     /*normalize all*/
     .item, input, .text{
         display: block;
-        margin: 0;
         padding: 0;
+        margin: 0;
         height: 40px;
     }
     /*item*/
@@ -33,11 +33,11 @@
     }
     /*input*/
     input {
-        -webkit-appearance: none;
-        border-top: 1px solid #ccc;
-        outline: none;
-        cursor: pointer;
         width: 100%;
+        outline: none;
+        -webkit-appearance: none;
+        border-top: 1px solid #cccccc;
+        cursor: pointer;
     }
     /*visually place text on top of input*/
     input + .text {
@@ -52,7 +52,7 @@
 /*item state*/
     /*hover*/
     input:hover {
-        background: #eee;
+        background: #eeeeee;
     }
     /*checked*/
     /*input*/
@@ -75,7 +75,7 @@
     }
     /*reset hover state to default when disabled*/
     input:disabled:hover {
-        background: #fff;
+        background: #ffffff;
     }
 
 </style>

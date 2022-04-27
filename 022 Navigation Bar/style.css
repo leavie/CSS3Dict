@@ -1,43 +1,43 @@
 .breadcrumb {
   display: flex;
-  font-family: sans-serif;
   padding: 20px;
+  font-family: sans-serif;
 }
 .breadcrumb-item {
-  list-style-type: none;
-  margin: 0 1.3em 0 0;
   position: relative;
+  margin: 0 1.3em 0 0;
+  list-style-type: none;
 }
-.breadcrumb-item a {
-  background: #cf6;
-  color: #666;
+.breadcrumb-item .link {
   display: inline-block;
-  height: 2em;
-  line-height: 2em;
   padding: 0 1em;
+  height: 2em;
   text-decoration: none;
+  color: #666666;
+  background: #ccff66;
   transition: background .2s;
+  line-height: 2em;
 }
 /* triangnal */
-.breadcrumb-item a::before {
-  border-color: transparent transparent transparent #cf6;
+.breadcrumb-item .link::before {
+  position: absolute;
+  top: 0;
+  right: -1em;
+  display: block;
+  width: 0;
+  height: 0;
   border-style: solid;
   border-width: 1em 0 1em 1em;
-  content: '';
-  display: block;
-  height: 0;
-  position: absolute;
-  right: -1em;
-  top: 0;
+  border-color: transparent transparent transparent #ccff66;
   transition: all .2s;
-  width: 0;
+  content: '';
 }
 /* hover style */
-.breadcrumb-item a:hover {
-  background: #9f0;
-  color: #333;
+.breadcrumb-item .link:hover {
+  color: #333333;
+  background: #99ff00;
 }
-.breadcrumb-item a:hover::before {
-  color: black;
-  border-color: transparent transparent transparent #9f0;
+.breadcrumb-item .link:hover::before {
+  color: #000000;
+  border-color: transparent transparent transparent #99ff00;
 }

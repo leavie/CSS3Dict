@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Modal Dialogue</title>
-    <link rel="stylesheet" href="../018 Buttons/Rounded-Button.css">
-    <link rel="stylesheet" href="Modal-Dialogue.css">
-    <style>
-        .button-misc {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-<div class="main-wrapper">
-    <article class="feature-article">
-    <h1 class="modal-action">
-        <button class=" button button-layout button-default">對話框</button></h1>
-        對話框的結構
-        .main-wrapper (relative)
-            .normal-content
-            .modal-wrapper (abs)
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Modal Dialogue</title>
+        <link rel="stylesheet" href="../018 Buttons/Rounded-Button.css">
+        <link rel="stylesheet" href="Modal-Dialogue.css">
+        <style>
+            .button-misc {
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="l-main-wrapper">
+            <article class="b-feature-article">
+                <h1 class="js-modal-action">
+                    <button
+                        class=" button css button-layout button-default">對話框</button>
+                </h1>
+                對話框的結構
+                .main-wrapper (relative)
+                .normal-content
+                .modal-wrapper (abs)
                 .modal-mask (abs)
                 .modal-content
 
-    </article>
-    <div class="modal-wrapper">
-        <div class="modal-mask"></div>
-        <div class="modal-content">
-                <p class="dialogue-title">真的要刪除嗎？</p>
-                <p class="dialogue-message">刪除後無法回復！</p>
+            </article>
+            <div class="b-modal">
+                <div class="b-modal__mask"></div>
+                <div class="b-modal__content">
+                    <p class="b-dialogue-title">真的要刪除嗎？</p>
+                    <p class="b-dialogue-message">刪除後無法回復！</p>
 
-                <div class="dialogue-action">
-                    <p class="dialogue-action-item">
-                        <button class="button button-cancel
-                         button-layout button-default button-max button-misc">
-                            取消</button></p>
-                    <p class="dialogue-action-item">
-                        <button class="button button-delete
-                        button-layout button-emergency  button-max button-misc">刪除</button></p>
+                    <div class="b-dialogue-action">
+                        <p class="b-dialogue-action__item">
+                            <button class="button button-cancel
+                        button-layout button-default button-max button-misc">
+                                取消</button>
+                        </p>
+                        <p class="b-dialogue-action__item">
+                            <button
+                                class="button button-delete
+                        button-layout button-emergency  button-max button-misc">刪除</button>
+                        </p>
+                    </div>
+
                 </div>
-
+            </div>
         </div>
-    </div>
-</div>
-</body>
-<script src="../Dependency/jquery.min.js"></script>
-<script src="script.js"></script>
+    </body>
+    <script src="../Dependency/jquery.min.js"></script>
+    <script src="script.js"></script>
+
 </html>

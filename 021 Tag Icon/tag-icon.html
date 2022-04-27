@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="uft-8">
-	<title>標籤圖示</title>
-	<style type="text/css">
-	/*容器隱藏突出部份*/
-	b {
-		margin: 50px;
-		display: inline-block;
-		overflow: hidden;
-		position: relative;
-	}
-	/*文字*/
-	span {
-	display: inline-block;
-    width: 130px;
-    height: 55px;
-    margin-left: 25px;
-    border-radius: 5px;
-    position: relative;
-    background: pink;
-    padding: 0 30px;
-    font: italic bold 28px/55px sans-serif;
-    color: white;
-	}
-	/*裝飾*/
-	span::before {
-		display: block;
-		content: "";
-		height: 40px;
-		width: 40px;
-		border-radius: 5px;
-		position: absolute;
-		bottom: 8px;
-		left: -17px;
-		z-index: -99;
-		background: pink;
-		transform: rotate(45deg);
-	}
-	</style>
-</head>
-<body>
-<b><span>Apple</span></b>
-</body>
+
+	<head>
+		<meta charset="uft-8">
+		<title>標籤圖示</title>
+		<style type="text/css">
+			/*容器隱藏突出部份*/
+			.b-tag {
+				position: relative;
+				display: inline-block;
+				overflow: hidden;
+				margin: 50px;
+			}
+
+			/*文字*/
+			.b-tag__title {
+				position: relative;
+				display: inline-block;
+				padding: 0 30px;
+				margin-left: 25px;
+				width: 130px;
+				height: 55px;
+				color: #ffffff;
+				background: #ffc0cb;
+				border-radius: 5px;
+				font: italic bold 28px/55px sans-serif;
+			}
+
+			/*裝飾*/
+			.b-tag__title::before {
+				position: absolute;
+				bottom: 8px;
+				left: -17px;
+				z-index: -99;
+				display: block;
+				width: 40px;
+				height: 40px;
+				background: #ffc0cb;
+				border-radius: 5px;
+				content: "";
+				transform: rotate(45deg);
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<b class="b-tag"><span class="b-tag__title">Apple</span></b>
+	</body>
+
 </html>

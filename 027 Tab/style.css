@@ -3,20 +3,21 @@
     -webkit-appearance: none;
 }
 
+/* stylelint-disable */
 input[name="tab"] {
-    -webkit-appearance: none;
-    cursor: pointer;
     display: inline-block;
-    border: 1px solid #39f;
-    border-radius: 4px;
     padding: 2px 4px;
     width: 30%;
     text-align: center;
+    border: 1px solid #3399ff;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    cursor: pointer;
 }
 
 input[name="tab"]:checked {
+    color: #ffffff;
     background: #3399ff;
-    color: #fff;
 }
 
 /*insert text*/
@@ -31,6 +32,7 @@ input[name="tab"][value="2"]:checked~#main3 {
     display: block;
 }
 
+/* stylelint-enable */
 /*content area*/
 .main-content {
     display: none;
@@ -48,75 +50,82 @@ input[name="tab"][value="2"]:checked~#main3 {
 
 /* BEM Convention*/
 /**
-    http: //andyyou.logdown.com/posts/290464-read-a-bem
+    https: //www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/
  ** 1. 只用 class 選擇器
  ** 2. 按照 block 組織
 */
-/* list block */
-.list {
-    list-style: none;
+/* list layout */
+.l-list {
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
-/* item block */
-.item {
+/* item layout */
+.l-list__item {
     padding: 1rem .6rem;
     border-bottom: 1px solid #eeeeee;
+}
 
+/* card component */
+.c-card {
+    display: block;
     overflow: auto;
 }
 
-.item__link {
+.c-card__link {
+    display: block;
     text-decoration: none;
 }
 
-.item__side {
+.c-card__side {
     float: left;
     margin-right: .6rem;
 }
 
-.item__side--small {
-    height: 64px;
+.c-card__side--small {
     width: 64px;
+    height: 64px;
 }
 
-/* img-container-squre block */
-.img-container-square {
-    width: 100%;
-    padding-bottom: 100%;
-    position: relative;
+.c-card__side--medium {
+    width: 128px;
+    height: 128px;
 }
 
-.img-container-square__img {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-/* fakeimg block */
-.fakeimg {
-    display: block;
-    background: #eee;
-    height: 100%;
-    width: 100%;
-}
-
-/* text block */
-.text {
-    margin: 0;
-    padding: 0;
-}
-
-.text__description {
-    color: #ccc;
-    font-family: sans-serif;
+.c-card__description {
     font-size: 0.7rem;
+    font-family: sans-serif;
+    color: #cccccc;
     line-height: 1.5rem;
 }
 
-.text__title {
-    font-weight: bold;
-    color: #333;
+.c-card__title {
     font-size: 0.8rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* img-container-square block */
+.l-img-container {
+    position: relative;
+    width: 100%;
+}
+
+.l-img-container--square {
+    padding-bottom: 100%;
+}
+
+.l-img-container__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* fakeimg component */
+.h-fakeimg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
 }
