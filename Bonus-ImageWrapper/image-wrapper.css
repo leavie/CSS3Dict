@@ -1,0 +1,83 @@
+/* stylelint-disable-next-line selector-max-type */
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 長寬等比例的彈性布局容器*/
+.l-img-container {
+    position: relative;
+    padding-bottom: 56%;
+    width: 100%;
+}
+
+/* 容器元素 */
+.l-img-container__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.b-card {
+    padding: 15px 20px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 1px 3px 11px 2px rgb(50 50 50 / 10%);
+
+}
+
+.b-card__footer {
+    padding-top: 0.8rem;
+    text-align: center;
+}
+
+.b-card__text {
+    font-size: 0.8rem;
+    color: #383838
+}
+
+.l-list {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    flex-flow: row wrap;
+    align-content: space-around;
+}
+
+.l-list__item {
+    width: 90%;
+}
+
+:root {
+    background-color: #efefef;
+}
+
+.b-gallery {
+    height: 100vh;
+}
+
+@media (min-width: 375px) {
+    .l-list__item\@small-screen {
+        width: 70%;
+    }
+}
+
+@media (min-width: 768px) {
+    .l-list__item\@medium-screen {
+        width: 20%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .l-list__item\@large-screen {
+        width: 22%;
+    }
+}
